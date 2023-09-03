@@ -3,7 +3,7 @@ import React from 'react'
 
 const ProductCard = ({ title, desc, pic }) => {
     return (
-        <Card elevation={20} className='space-y-5 bg-gradient-to-b from-indigo-500 via-purple-500 to-pink-500 w-1/4 mx-2 shadow-xl hover:shadow-2xl p-3'>
+        <Card elevation={20} className='space-y-5 bg-gradient-to-b from-indigo-500 via-purple-500 to-pink-500 w-1/4  mx-2 shadow-xl hover:shadow-2xl p-3'>
             <CardContent>
                 <Typography variant='h2'>
                     {title}

@@ -22,9 +22,15 @@ const Header = () => {
     const handlechange = (e, value) => {
         setNavPage(value)
     }
-    return (
-        <div position='static' className='shadow-2xl'>
 
+    const themeChange = () => {
+        // colorMode.toggleColorMode
+        
+    }
+
+    
+    return (
+        <div  className='shadow-2xl sticky top-0'>
             {isNonmobile === false ? (
                 <Toolbar>
                     <div className='flex items-center justify-between w-full'>
@@ -37,7 +43,7 @@ const Header = () => {
                             <Typography variant='h3'>Simply Gaming</Typography>
                         </div>
                         <div>
-                            <IconButton onClick={colorMode.toggleColorMode}>
+                            <IconButton onClick={themeChange}>
                                 {theme.palette.mode === 'dark' ? <LightMode /> : <DarkMode />}
                             </IconButton>
                         </div>
@@ -104,7 +110,7 @@ const Header = () => {
                                 >
                                     {pages && pages.map(({ label, value, index }) => {
                                         return (
-                                            <Tab  label={label} value={value} sx={{ fontSize: '15px' }} />
+                                            <Tab  label={label} value={value} sx={{ fontSize: '15px' }}/>
                                         )
                                     })}
 
