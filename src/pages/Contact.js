@@ -14,7 +14,7 @@ const Contact = () => {
                 </p>
             </div>
             <div className='basis-1/2 '>
-                <Card className='md:mr-7 m-7' >
+                <Card className='md:mr-7 m-7' elevation={10}>
                     <CardHeader title={"Something you want to tell us "} />
                     <form>
                         <div className='flex flex-col m-3 space-y-8 mb-5'>

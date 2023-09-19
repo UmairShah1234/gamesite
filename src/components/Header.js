@@ -1,7 +1,8 @@
-import {  Drawer, IconButton, List, ListItemButton, ListItemIcon, ListItemText, Tab, Tabs, Toolbar, Typography, useMediaQuery, useTheme } from '@mui/material'
-import React, { useContext, useState } from 'react'
+import { Drawer, IconButton, List, ListItemButton, ListItemIcon, ListItemText, Tab, Tabs, Toolbar, Typography, useMediaQuery, useTheme } from '@mui/material'
+import React, { useContext, useEffect, useState } from 'react'
 import { Call, Close, DarkMode, Event, Home, Info, LightMode, Menu, SportsEsports } from '@mui/icons-material'
 import { ColorModeContext, tokens } from '../themes/theme';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const Header = () => {
     const theme = useTheme();
@@ -9,28 +10,33 @@ const Header = () => {
     const colors = tokens(theme.palette.mode);
     const isNonmobile = useMediaQuery('(min-width:600px)');
     const [isOpen, setIsopen] = useState(false)
-    const [navPage, setNavPage] = useState('')
+    const [navPage, setNavPage] = useState('/')
+    const location = useLocation().pathname;
+    const [path, setPath] = useState('');
+    const navigate = useNavigate();
 
     const pages = [
-        { label: 'Home', value: 'Home' },
-        { label: 'Explore', value: 'Explore' },
-        { label: 'Events', value: 'Events' },
-        { label: 'Simply Gaming', value: 'Gaming' },
-        { label: 'Contact Us', value: 'Contact' },
+        { label: 'Home', value: '/' },
+        { label: 'Explore', value: 'explore' },
+        { label: 'Events', value: 'events' },
+        { label: 'Simply Gaming', value: 'what-we-do' },
+        { label: 'Contact Us', value: 'contact-us' },
     ]
+
+    useEffect(() => {
+        setPath(location.split('/')[1]);
+        setNavPage(path)
+    }, [location, path])
 
     const handlechange = (e, value) => {
         setNavPage(value)
+        navigate(value)
+        setPath(value)
     }
 
-    const themeChange = () => {
-        // colorMode.toggleColorMode
-        
-    }
 
-    
     return (
-        <div  className='shadow-2xl sticky top-0'>
+        <div className='shadow-2xl '>
             {isNonmobile === false ? (
                 <Toolbar>
                     <div className='flex items-center justify-between w-full'>
@@ -43,7 +49,7 @@ const Header = () => {
                             <Typography variant='h3'>Simply Gaming</Typography>
                         </div>
                         <div>
-                            <IconButton onClick={themeChange}>
+                            <IconButton onClick={colorMode.toggleColorMode}>
                                 {theme.palette.mode === 'dark' ? <LightMode /> : <DarkMode />}
                             </IconButton>
                         </div>
@@ -105,12 +111,12 @@ const Header = () => {
                                     textColor={colors.grey[100]}
                                     indicatorColor="blue"
                                     TabIndicatorProps={{
-                                        style: {backgroundColor: "red"}
+                                        style: { backgroundColor: "red" }
                                     }}
                                 >
                                     {pages && pages.map(({ label, value, index }) => {
                                         return (
-                                            <Tab  label={label} value={value} sx={{ fontSize: '15px' }}/>
+                                            <Tab label={label} value={value} sx={{ fontSize: '15px' }} />
                                         )
                                     })}
 

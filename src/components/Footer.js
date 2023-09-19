@@ -1,5 +1,5 @@
 import { EmailOutlined, ExpandMore, FacebookOutlined, Home, Info, Instagram, SportsEsports, WhatsApp } from '@mui/icons-material'
-import { Container, ListItemButton, Typography, Card, ListItemIcon, useMediaQuery, Accordion, AccordionSummary, AccordionDetails } from '@mui/material'
+import { Container, ListItemButton, Typography, Card, useMediaQuery, Accordion, AccordionSummary, AccordionDetails } from '@mui/material'
 import React from 'react'
 
 const itemsExplore = [
@@ -17,13 +17,16 @@ const itemContact = [
 ]
 
 const itemsSupport = [
-
+  { text: 'FAQs' },
+  { text: 'Reviews' },
+  { text: 'FAQs' },
+  { text: 'FAQs' },
 ]
 
 const Footer = () => {
   const isNonmobile = useMediaQuery('(min-width:600px)');
   return (
-    <div  className='mt-3 p-3 min-h-full'>
+    <div className='mt-3 p-3 min-h-full'>
       <Container>
         <hr className='border my-3' />
       </Container>
@@ -38,9 +41,7 @@ const Footer = () => {
               {itemsExplore.map(({ icon, text }) => {
                 return (
                   <ListItemButton>
-                    <ListItemIcon>
-                      {icon}
-                    </ListItemIcon>
+
                     <Typography variant='h5'>{text}</Typography>
                   </ListItemButton>
                 )
@@ -57,9 +58,7 @@ const Footer = () => {
               {itemsSupport.map(({ icon, text }) => {
                 return (
                   <ListItemButton>
-                    <ListItemIcon>
-                      {icon}
-                    </ListItemIcon>
+
                     <Typography variant='h5'>{text}</Typography>
                   </ListItemButton>
                 )
@@ -76,9 +75,7 @@ const Footer = () => {
               {itemContact.map(({ icon, text }) => {
                 return (
                   <ListItemButton>
-                    <ListItemIcon>
-                      {icon}
-                    </ListItemIcon>
+
                     <Typography variant='h5'>{text}</Typography>
                   </ListItemButton>
                 )
@@ -98,9 +95,7 @@ const Footer = () => {
               {itemsExplore.map(({ icon, text }) => {
                 return (
                   <ListItemButton>
-                    <ListItemIcon>
-                      {icon}
-                    </ListItemIcon>
+
                     <Typography variant='h5'>{text}</Typography>
                   </ListItemButton>
                 )
@@ -109,14 +104,12 @@ const Footer = () => {
           </div>
           <div>
             <Typography variant='h4' className='hover:text-red-500'>Support</Typography>
-            
+
             <div className='space-y-4 mt-1'>
               {itemsSupport.map(({ icon, text }) => {
                 return (
                   <ListItemButton>
-                    <ListItemIcon>
-                      {icon}
-                    </ListItemIcon>
+
                     <Typography variant='h5'>{text}</Typography>
                   </ListItemButton>
                 )
@@ -129,9 +122,7 @@ const Footer = () => {
               {itemContact.map(({ icon, text }) => {
                 return (
                   <ListItemButton>
-                    <ListItemIcon>
-                      {icon}
-                    </ListItemIcon>
+
                     <Typography variant='h5'>{text}</Typography>
                   </ListItemButton>
                 )
