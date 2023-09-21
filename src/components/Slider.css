@@ -1,0 +1,19 @@
+.container{
+    width: 100%;
+    max-width: 100vw;
+    overflow: hidden;
+   padding: 0;
+}
+
+.carousel .slide img{
+    height: 92.5vh;
+}
+.carousel .control-dots .dot{
+    background-color: black;
+}
+
+.slideimg{
+    background-image: url("/public/images/Banner6.png");
+    height: 100vh;
+}
+  

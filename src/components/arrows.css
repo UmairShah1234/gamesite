@@ -1,0 +1,30 @@
+/* In your CSS file */
+
+.custom-arrow-slider {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    background-color: #333; /*Customize the background color*/
+    color: #fff; /* Customize the arrow color */
+    width: 40px; /* Customize the arrow width */
+    height: 40px; /* Customize the arrow height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 30px; /* Customize the arrow icon size */
+  }
+  
+.custom-arrow-left {
+    
+  z-index: 100;
+    left: 20px; /* Customize the right arrow position */
+  }
+  
+  .custom-arrow-right {
+    position: absolute;
+    top: 50%;
+    right: 20px; /* Customize the right arrow position */
+  }
+  
